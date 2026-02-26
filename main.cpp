@@ -1,35 +1,34 @@
 #include <iostream>
 using namespace std;
-
+#include "thanos.h"
 #include "monster.h"
 
-int main(int argc, char* argv[]) {
+int main() {
 
-    monster A("Rex", 10, 2);
-    monster B("Lulu", 7, 3);
-    monster x[5] = {{"James"},{"Pupu",22},{"Galone"},{"Malofe"},{"Bonskee"}};
-    monster c;
-    monster*p;
-    p=&c;
-    p->display();
-    p=&A;
-    p->display();
-    p=new monster("Mable",23);
-    p->display();
-    delete p;
+  Thanos T;
+  int n;
+  cout<<"There was a breach at the bottom of the ocean and monsters started emerging from it. Not wanting to share control over earth, Thanos collects stones and snap them away"<<endl;
+  cout<<"How many monsters?";
+  cin>>n;
 
-    p= new monster[3];
-    delete []p;
-  /*
+  monster *m=new monster[n]; //make sure they have hp
  
- monster *p,x;
-  p=&x;
-  p=new monster;
- delete p;
+  ++T;
+  ++T;
+  T.snap_finger(m,n);
+  ++T;
+  ++T;
+  T.snap_finger(m,n);
+    ++T;
+  ++T;
+  T.snap_finger(m,n);//Clear hp n/2(half) of the monster. 
 
- p=new monster[3];
- delete []p;
+  int i;
+  for(i=0;i<n;i++)
+      m[i].display();// If the hp=0, you do not display"" -->you will see only n/2 monster
+  
 
-*/
+  delete [] m;
 
 }
+
